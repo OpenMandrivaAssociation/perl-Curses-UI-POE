@@ -17,7 +17,6 @@ Buildrequires:	perl-devel
 Buildrequires:	perl(Curses::UI)
 Buildrequires:	perl(POE)
 Buildarch:      noarch
-Buildroot:	    %{_tmppath}/%{name}-%{version}
 
 %description
 This is a subclass for Curses::UI that enables it to work with POE. It is
