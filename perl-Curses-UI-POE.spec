@@ -1,7 +1,7 @@
 %define module	Curses-UI-POE
 %define name	perl-%{module}
 %define version 0.02801
-%define release %mkrel 1
+%define release %mkrel 3
 
 Name:		%{name}
 Version:	%{version}
