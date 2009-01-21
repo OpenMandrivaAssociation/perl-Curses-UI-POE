@@ -8,6 +8,9 @@ License:	GPL
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}
 Source0:	http://www.cpan.org/modules/by-module/Curses/%{module}-%{version}.tar.gz
+
+Patch1:     rt-fix-19681.patch
+
 %if %{mdkversion} < 1010
 Buildrequires:	perl-devel
 %endif
@@ -15,6 +18,7 @@ Buildrequires:	perl(Curses::UI)
 Buildrequires:	perl(POE)
 Buildarch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Epoch: 1
 
 %description
 This is a subclass for Curses::UI that enables it to work with POE. It is
@@ -26,6 +30,7 @@ networking clients, without Curses::UI breaking your programs' functionality.
 %prep
 
 %setup -q -n %{module}-%{version}
+%patch1 -p0 -b .19681
 # this one doesn't pass during rpm building
 rm -f t/session.t
 
