@@ -1,24 +1,19 @@
-%define module	Curses-UI-POE
+%define upstream_name       Curses-UI-POE
+%define upstream_version    0.035
 
-Name:		perl-%{module}
-Version:	0.031
-Release:	%mkrel 1
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+Epoch:      1
 Summary:	A subclass makes Curses::UI POE Friendly
 License:	GPL
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}
-Source0:	http://www.cpan.org/modules/by-module/Curses/%{module}-%{version}.tar.gz
-
-Patch1:     rt-fix-19681.patch
-
-%if %{mdkversion} < 1010
-Buildrequires:	perl-devel
-%endif
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source:     http://www.cpan.org/modules/by-module/Curse/%{upstream_name}-%{upstream_version}.tar.gz
 Buildrequires:	perl(Curses::UI)
 Buildrequires:	perl(POE)
 Buildarch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Epoch: 1
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This is a subclass for Curses::UI that enables it to work with POE. It is
@@ -28,11 +23,10 @@ to itself. This allows you to use POE behind the scenes for things like
 networking clients, without Curses::UI breaking your programs' functionality.
 
 %prep
-
-%setup -q -n %{module}-%{version}
-%patch1 -p0 -b .19681
+%setup -q -n %{upstream_name}-%{upstream_version} 
+#%patch1 -p0 -b .19681
 # this one doesn't pass during rpm building
-rm -f t/session.t
+#rm -f t/session.t
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
