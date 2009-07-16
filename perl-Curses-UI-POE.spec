@@ -24,9 +24,6 @@ networking clients, without Curses::UI breaking your programs' functionality.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version} 
-#%patch1 -p0 -b .19681
-# this one doesn't pass during rpm building
-#rm -f t/session.t
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
