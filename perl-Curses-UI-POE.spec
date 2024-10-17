@@ -8,7 +8,7 @@ Epoch:		1
 Summary:	A subclass makes Curses::UI POE Friendly
 License:	GPL
 Group:		Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
+Url:        https://search.cpan.org/dist/%{upstream_name}
 Source:		http://www.cpan.org/modules/by-module/Curse/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
