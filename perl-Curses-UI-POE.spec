@@ -11,6 +11,7 @@ Group:		Development/Perl
 Url:        https://search.cpan.org/dist/%{upstream_name}
 Source:		http://www.cpan.org/modules/by-module/Curse/%{upstream_name}-%{upstream_version}.tar.gz
 
+BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires:	perl(Curses::UI)
 BuildRequires:	perl(POE)
