@@ -1,15 +1,15 @@
 %define upstream_name       Curses-UI-POE
-%define upstream_version    0.035
+%define upstream_version    0.04
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%{upstream_version}
+Release:	1
 Epoch:		1
 Summary:	A subclass makes Curses::UI POE Friendly
 License:	GPL
 Group:		Development/Perl
-Url:        https://search.cpan.org/dist/%{upstream_name}
-Source:		http://www.cpan.org/modules/by-module/Curse/%{upstream_name}-%{upstream_version}.tar.gz
+Url:        https://metacpan.org/dist/Curses-UI-POE
+Source:		https://cpan.metacpan.org/authors/id/T/TA/TAG/Curses-UI-POE-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
