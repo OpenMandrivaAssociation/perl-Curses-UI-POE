@@ -1,15 +1,13 @@
 %define upstream_name       Curses-UI-POE
-%define upstream_version    0.04
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	0.04
+Release:	2
 Epoch:		1
 Summary:	A subclass makes Curses::UI POE Friendly
 License:	GPL
 Group:		Development/Perl
 Url:        https://metacpan.org/dist/Curses-UI-POE
-Source:		https://cpan.metacpan.org/authors/id/T/TA/TAG/Curses-UI-POE-%{upstream_version}.tar.gz
+Source:		https://cpan.metacpan.org/authors/id/T/TA/TAG/Curses-UI-POE-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -25,7 +23,7 @@ to itself. This allows you to use POE behind the scenes for things like
 networking clients, without Curses::UI breaking your programs' functionality.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version} 
+%setup -q -n %{upstream_name}-%{version} 
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
